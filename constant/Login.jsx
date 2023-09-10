@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Button, Alert } from "react-native";
+import { View, Text, TextInput, Button, Alert, Image } from "react-native"; // Image 컴포넌트를 추가해야 합니다.
 
 const Login = ({ navigation }) => {
   const [username, setUsername] = useState("");
@@ -14,39 +14,40 @@ const Login = ({ navigation }) => {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text style={{ fontSize: 24, marginBottom: 20 }}>Login</Text>
-      <TextInput
+    <View
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: "#FFFBF6",
+      }}
+    >
+      <Image
+        source={require("../assets/SUNNY.png")}
         style={{
-          width: "80%",
-          height: 40,
-          borderColor: "gray",
-          borderWidth: 1,
-          marginBottom: 10,
-          padding: 5,
+          marginTop: 75,
+          alignSelf: "center",
         }}
-        placeholder="Username"
-        value={username}
-        onChangeText={(text) => setUsername(text)}
       />
-      <TextInput
+      <Text
         style={{
-          width: "80%",
-          height: 40,
-          borderColor: "gray",
-          borderWidth: 1,
-          marginBottom: 10,
-          padding: 5,
+          fontSize: 20,
+          fontWeight: 500,
+          color: "#1F1F1F",
+          marginTop: 48,
+          textAlign: "center",
         }}
-        placeholder="Password"
-        secureTextEntry
-        value={password}
-        onChangeText={(text) => setPassword(text)}
-      />
-      <Button title="Login" onPress={handleLogin} />
-      <Button
-        title="Go to SiginUp"
-        onPress={() => navigation.navigate("SiginUp")}
+      >
+        간편하게 로그인하고 {"\n"}
+        써니의 서비스를 이용해보세요
+      </Text>
+      <Image
+        source={require("../assets/kakao_login_large.png")}
+        style={{
+          width: 335,
+          height: 50.25,
+          marginTop: 48,
+          alignSelf: "center",
+        }}
       />
     </View>
   );
