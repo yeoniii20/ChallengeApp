@@ -1,78 +1,364 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import Top from "../components/Top";
 import Bottom from "../components/Bottom";
 
 const FriendsList = () => {
   return (
-    <View style={styles.container}>
+    <View
+      style={{
+        flexDirection: "column",
+        backgroundColor: "#FFFBF6",
+      }}
+    >
       <Top />
-      <View style={styles.contentContainer}>
-        <View style={styles.header}>
-          <Text style={styles.headerText}>친구 목록</Text>
-        </View>
-        <View style={styles.friendListContainer}>
-          <Text style={styles.friendListTitle}>대결중인 친구</Text>
-          <View style={styles.separator} />
-          <View style={styles.friendItem}>
-            <Image source={require("../assets/friendIcon.svg")} />
-            <Text style={styles.friendName}>친구1</Text>
-            <Image source={require("../assets/messageIcon.svg")} />
-            <Image source={require("../assets/winnerIcon.svg")} />
+      <View
+        style={{
+          // flex: 1,
+          flexDirection: "column",
+          marginTop: 25,
+          marginBottom: 40,
+        }}
+      >
+        <Text
+          style={{
+            fontSize: 22,
+            fontWeight: 700,
+            color: "#1F1F1F",
+            textAlign: "center",
+            marginBottom: 24,
+          }}
+        >
+          친구 목록
+        </Text>
+        <Text
+          style={{
+            fontSize: 20,
+            fontWeight: 700,
+            color: "#1F1F1F",
+            paddingLeft: 28,
+            marginBottom: 8,
+          }}
+        >
+          대결중인 친구
+        </Text>
+        <View
+          style={{
+            width: "100%",
+            height: 2,
+            backgroundColor: "#C1C1C1",
+            marginBottom: 20,
+          }}
+        />
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            paddingLeft: 28,
+            paddingRight: 28,
+            marginBottom: 20,
+          }}
+        >
+          <View style={{ flexDirection: "row" }}>
+            <Image
+              source={require("../assets/Avatar.png")}
+              style={styles.icon}
+            />
+            <Text
+              style={{
+                marginLeft: 8,
+                fontSize: 16,
+                fontWeight: 500,
+                color: "#1F1F1F",
+                alignSelf: "center",
+              }}
+            >
+              친구1
+            </Text>
           </View>
-          {/* Add more friend items as needed */}
+          <View style={{ flexDirection: "row", gap: 16 }}>
+            <TouchableOpacity>
+              <Image
+                source={require("../assets/messageBlack.png")}
+                style={styles.icon}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image
+                source={require("../assets/VersusIcon.png")}
+                style={styles.icon}
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View
+          style={{
+            width: "100%",
+            height: 2,
+            backgroundColor: "#C1C1C1",
+            marginBottom: 20,
+          }}
+        />
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            paddingLeft: 28,
+            paddingRight: 28,
+            marginBottom: 20,
+          }}
+        >
+          <View style={{ flexDirection: "row" }}>
+            <Image
+              source={require("../assets/Avatar.png")}
+              style={styles.icon}
+            />
+            <Text
+              style={{
+                marginLeft: 8,
+                fontSize: 16,
+                fontWeight: 500,
+                color: "#1F1F1F",
+                alignSelf: "center",
+              }}
+            >
+              친구1
+            </Text>
+          </View>
+          <View style={{ flexDirection: "row", gap: 16 }}>
+            <TouchableOpacity>
+              <Image
+                source={require("../assets/messageBlack.png")}
+                style={styles.icon}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image
+                source={require("../assets/VersusIcon.png")}
+                style={styles.icon}
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View
+          style={{
+            width: "100%",
+            height: 2,
+            backgroundColor: "#C1C1C1",
+            marginBottom: 20,
+          }}
+        />
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            paddingLeft: 28,
+            paddingRight: 28,
+            marginBottom: 20,
+          }}
+        >
+          <View style={{ flexDirection: "row" }}>
+            <Image
+              source={require("../assets/Avatar.png")}
+              style={styles.icon}
+            />
+            <Text
+              style={{
+                marginLeft: 8,
+                fontSize: 16,
+                fontWeight: 500,
+                color: "#1F1F1F",
+                alignSelf: "center",
+              }}
+            >
+              친구1
+            </Text>
+          </View>
+          <View style={{ flexDirection: "row", gap: 16 }}>
+            <TouchableOpacity>
+              <Image
+                source={require("../assets/messageBlack.png")}
+                style={styles.icon}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image
+                source={require("../assets/VersusIconRed.png")}
+                style={styles.icon}
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View
+          style={{
+            width: "100%",
+            height: 2,
+            backgroundColor: "#1F1F1F",
+          }}
+        />
+      </View>
+      <Text
+        style={{
+          fontSize: 20,
+          fontWeight: 700,
+          color: "#1F1F1F",
+          paddingLeft: 28,
+          marginBottom: 8,
+        }}
+      >
+        친구
+      </Text>
+      <View
+        style={{
+          width: "100%",
+          height: 2,
+          backgroundColor: "#C1C1C1",
+          marginBottom: 20,
+        }}
+      />
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          paddingLeft: 28,
+          paddingRight: 28,
+          marginBottom: 20,
+        }}
+      >
+        <View style={{ flexDirection: "row" }}>
+          <Image source={require("../assets/Avatar.png")} style={styles.icon} />
+          <Text
+            style={{
+              marginLeft: 8,
+              fontSize: 16,
+              fontWeight: 500,
+              color: "#1F1F1F",
+              alignSelf: "center",
+            }}
+          >
+            친구1
+          </Text>
+        </View>
+        <View style={{ flexDirection: "row", gap: 16 }}>
+          <TouchableOpacity>
+            <Image
+              source={require("../assets/messageBlack.png")}
+              style={styles.icon}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={require("../assets/VersusIconBlack.png")}
+              style={styles.icon}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
+      <View
+        style={{
+          width: "100%",
+          height: 2,
+          backgroundColor: "#C1C1C1",
+          marginBottom: 20,
+        }}
+      />
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          paddingLeft: 28,
+          paddingRight: 28,
+          marginBottom: 20,
+        }}
+      >
+        <View style={{ flexDirection: "row" }}>
+          <Image source={require("../assets/Avatar.png")} style={styles.icon} />
+          <Text
+            style={{
+              marginLeft: 8,
+              fontSize: 16,
+              fontWeight: 500,
+              color: "#1F1F1F",
+              alignSelf: "center",
+            }}
+          >
+            친구1
+          </Text>
+        </View>
+        <View style={{ flexDirection: "row", gap: 16 }}>
+          <TouchableOpacity>
+            <Image
+              source={require("../assets/messageBlack.png")}
+              style={styles.icon}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={require("../assets/VersusIconBlack.png")}
+              style={styles.icon}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
+      <View
+        style={{
+          width: "100%",
+          height: 2,
+          backgroundColor: "#C1C1C1",
+          marginBottom: 20,
+        }}
+      />
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          paddingLeft: 28,
+          paddingRight: 28,
+          marginBottom: 20,
+        }}
+      >
+        <View style={{ flexDirection: "row" }}>
+          <Image source={require("../assets/Avatar.png")} style={styles.icon} />
+          <Text
+            style={{
+              marginLeft: 8,
+              fontSize: 16,
+              fontWeight: 500,
+              color: "#1F1F1F",
+              alignSelf: "center",
+            }}
+          >
+            친구1
+          </Text>
+        </View>
+        <View style={{ flexDirection: "row", gap: 16 }}>
+          <TouchableOpacity>
+            <Image
+              source={require("../assets/messageBlack.png")}
+              style={styles.icon}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image
+              source={require("../assets/VersusIconBlack.png")}
+              style={styles.icon}
+            />
+          </TouchableOpacity>
         </View>
       </View>
       <Bottom />
     </View>
   );
 };
-
 const styles = StyleSheet.create({
-  container: {
+  menuItem: {
     flex: 1,
-    flexDirection: "column",
-    backgroundColor: "#FFFBF6",
-  },
-  contentContainer: {
-    flex: 1,
-    marginTop: 25,
-    marginBottom: 40,
-    paddingLeft: 28,
-  },
-  header: {
+    justifyContent: "center",
     alignItems: "center",
-    marginBottom: 24,
   },
-  headerText: {
-    fontSize: 22,
-    fontWeight: "700",
-    color: "#1F1F1F",
-  },
-  friendListContainer: {
-    flex: 1,
-  },
-  friendListTitle: {
-    fontSize: 20,
-    fontWeight: "700",
-    color: "#1F1F1F",
-  },
-  separator: {
-    width: "100%",
-    height: 2,
-    backgroundColor: "grey",
-    marginBottom: 16,
-  },
-  friendItem: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 16,
-  },
-  friendName: {
-    fontSize: 16,
-    fontWeight: "500",
-    color: "#1F1F1F",
-    marginLeft: 8,
+  icon: {
+    height: 40,
+    width: 40,
   },
 });
 
