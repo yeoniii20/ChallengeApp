@@ -2033,6 +2033,11 @@
     "@urql/core" ">=2.3.1"
     "wonka" "^4.0.14"
 
+"@use-expo/font@^2.0.0":
+  "integrity" "sha512-oOJ2uaRyZNQg7PnQviz7nBcdrRL38zxScab4ktgtI4asa6G0dHW9wg307uJJmn0sHS04Yqtw+m0EOjDcGw3iWg=="
+  "resolved" "https://registry.npmjs.org/@use-expo/font/-/font-2.0.0.tgz"
+  "version" "2.0.0"
+
 "@xmldom/xmldom@^0.8.8":
   "integrity" "sha512-2WALfTl4xo2SkGCYRt6rDTFfk9R1czmBvUQy12gK2KuRKIpWEhcbbzy8EZXtz/jkRqHX8bFEc6FC1HjX4TUWYw=="
   "resolved" "https://registry.npmjs.org/@xmldom/xmldom/-/xmldom-0.8.10.tgz"
@@ -3196,7 +3201,7 @@
   dependencies:
     "uuid" "^3.4.0"
 
-"expo-font@~11.4.0":
+"expo-font@^11.4.0", "expo-font@>=8.1.0", "expo-font@~11.4.0":
   "integrity" "sha512-nkmezCFD7gR/I6R+e3/ry18uEfF8uYrr6h+PdBJu+3dawoLOpo+wFb/RG9bHUekU1/cPanR58LR7G5MEMKHR2w=="
   "resolved" "https://registry.npmjs.org/expo-font/-/expo-font-11.4.0.tgz"
   "version" "11.4.0"
@@ -5412,6 +5417,11 @@
   "integrity" "sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   "version" "18.2.0"
+
+"react-native-config@^1.5.1":
+  "integrity" "sha512-g1xNgt1tV95FCX+iWz6YJonxXkQX0GdD3fB8xQtR1GUBEqweB9zMROW77gi2TygmYmUkBI7LU4pES+zcTyK4HA=="
+  "resolved" "https://registry.npmjs.org/react-native-config/-/react-native-config-1.5.1.tgz"
+  "version" "1.5.1"
 
 "react-native-gesture-handler@>= 1.0.0":
   "integrity" "sha512-deqh36bw82CFUV9EC4tTo2PP1i9HfCOORGS3Zmv71UYhEZEHkzZv18IZNPB+2Awzj45vLIidZxGYGFxHlDSQ5A=="
