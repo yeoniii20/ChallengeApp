@@ -14,7 +14,7 @@ const TestPage = () => {
         <View style={{ flex: 1 }}>
           <View
             style={{
-              display: "flex",
+              flex: 1,
               flexDirection: "column",
               marginTop: 25,
               marginBottom: 40,
@@ -42,13 +42,13 @@ const TestPage = () => {
                 background: "grey",
               }}
             />
-            <View style={{ display: "flex" }}>
-              <Image source={require("../assets/friendIcon.svg")} />
+            <View style={{ flex: 1 }}>
+              <Image source={require("../assets/community.png")} />
               <Text style={{ fontSize: 16, fontWeight: 500, color: "#1F1F1F" }}>
                 친구1
               </Text>
-              <Image source={require("../assets/messageIcon.svg")} />
-              <Image source={require("../assets/winnerIcon.svg")} />
+              <Image source={require("../assets/community.png")} />
+              <Image source={require("../assets/community.png")} />
             </View>
           </View>
         </View>

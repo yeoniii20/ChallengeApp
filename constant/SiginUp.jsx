@@ -14,7 +14,7 @@ const SiginUp = ({ navigation }) => {
   return (
     <View
       style={{
-        display: "flex",
+        flex: 1,
         flexDirection: "column",
         backgroundColor: "#FFFBF6",
       }}

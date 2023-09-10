@@ -43,12 +43,12 @@ const FriendsList = () => {
             }}
           />
           <View style={{ flex: 1 }}>
-            <Image source={require("../assets/friendIcon.svg")} />
+            <Image source={require("../assets/community.png")} />
             <Text style={{ fontSize: 16, fontWeight: 500, color: "#1F1F1F" }}>
               친구1
             </Text>
-            <Image source={require("../assets/friendIcon.svg")} />
-            <Image source={require("../assets/winnerIcon.svg")} />
+            <Image source={require("../assets/community.png")} />
+            <Image source={require("../assets/community.png")} />
           </View>
         </View>
       </View>

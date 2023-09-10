@@ -17,26 +17,26 @@ const Note = () => {
           <Text style={styles.label}>어디에 쓰셨나요?</Text>
           <View style={styles.noticeContainer}>
             <Image
-              source={require("../assets/notice.svg")}
+              source={require("../assets/community.png")}
               style={styles.noticeIcon}
             />
             <Text style={styles.noticeText}>구분 기준</Text>
           </View>
         </View>
         <View style={styles.radioContainer}>
-          <Image source={require("../assets/radioBtnF.svg")} />
+          <Image source={require("../assets/community.png")} />
           <Text style={styles.radioText}>의류</Text>
         </View>
         <View style={styles.radioContainer}>
-          <Image source={require("../assets/radioBtnF.svg")} />
+          <Image source={require("../assets/community.png")} />
           <Text style={styles.radioText}>식생활</Text>
         </View>
         <View style={styles.radioContainer}>
-          <Image source={require("../assets/radioBtnF.svg")} />
+          <Image source={require("../assets/community.png")} />
           <Text style={styles.radioText}>주거</Text>
         </View>
         <View style={styles.radioContainer}>
-          <Image source={require("../assets/radioBtnF.svg")} />
+          <Image source={require("../assets/community.png")} />
           <Text style={styles.radioText}>기타</Text>
         </View>
         <Text style={styles.label}>얼마를 쓰셨나요?</Text>
