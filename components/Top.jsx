@@ -17,10 +17,22 @@ const Top = () => {
               },
             ]}
           />
+          <Text
+            style={{
+              marginLeft: -20,
+              fontSize: 16,
+              fontWeight: 900,
+              color: "#1F1F1F",
+              whiteSpace: "nowrap",
+              transform: [{ translateY: 0 }, { translateX: 90 }],
+            }}
+          >
+            NN%
+          </Text>
         </View>
-        <Image source={require("../assets/setting3.svg")} style={styles.icon} />
+        <Image source={require("../assets/setting.png")} style={styles.icon} />
         <Image
-          source={require("../assets/notification.svg")}
+          source={require("../assets/notification.png")}
           style={styles.icon}
         />
       </View>
