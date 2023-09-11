@@ -23,7 +23,6 @@ const Top = () => {
               fontSize: 16,
               fontWeight: 900,
               color: "#1F1F1F",
-              whiteSpace: "nowrap",
               transform: [{ translateY: 0 }, { translateX: 90 }],
             }}
           >
