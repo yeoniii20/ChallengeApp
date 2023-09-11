@@ -7,7 +7,7 @@ const Message = () => {
   return (
     <View style={styles.container}>
       <View style={styles.closeButtonContainer}>
-        <Image source={require("../../assets/closeBtn.svg")} />
+        <Image source={require("../assets/community.png")} />
       </View>
       <Text style={styles.title}>
         @@님에게서

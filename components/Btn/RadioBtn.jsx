@@ -12,9 +12,9 @@ const RadioBtn = ({ text }) => {
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={handleRadioBtnClick}>
         {state ? (
-          <Image source={require("../assets/radioBtnT.svg")} />
+          <Image source={require("../assets/community.png")} />
         ) : (
-          <Image source={require("../assets/radioBtnF.svg")} />
+          <Image source={require("../assets/community.png")} />
         )}
       </TouchableOpacity>
       <Text style={styles.text}>{text}</Text>
