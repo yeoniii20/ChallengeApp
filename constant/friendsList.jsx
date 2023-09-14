@@ -7,10 +7,8 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import Top from "../components/Top";
-import Bottom from "../components/Bottom";
 
-const FriendsList = () => {
+function FriendsList({ navigation }) {
   return (
     <View
       style={{
@@ -217,15 +215,14 @@ const FriendsList = () => {
       >
         친구
       </Text>
+      <View
+        style={{
+          width: "100%",
+          height: 2,
+          backgroundColor: "#C1C1C1",
+        }}
+      />
       <ScrollView>
-        <View
-          style={{
-            width: "100%",
-            height: 2,
-            backgroundColor: "#C1C1C1",
-            marginBottom: 20,
-          }}
-        />
         <View
           style={{
             flexDirection: "row",
@@ -233,6 +230,7 @@ const FriendsList = () => {
             paddingLeft: 28,
             paddingRight: 28,
             marginBottom: 20,
+            marginTop: 20,
           }}
         >
           <View style={{ flexDirection: "row" }}>
@@ -466,7 +464,7 @@ const FriendsList = () => {
       </ScrollView>
     </View>
   );
-};
+}
 const styles = StyleSheet.create({
   menuItem: {
     flex: 1,
