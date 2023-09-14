@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 
-const Top = () => {
+const Top = ({ navigation }) => {
   const [progress, setProgress] = useState(50);
 
   return (
@@ -39,9 +39,14 @@ const Top = () => {
   );
 };
 
+Top.navigationOptions = {
+  headerShown: false,
+};
+
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 24,
+    borderBottomLeftRadius: 24,
+    borderBottomRightRadius: 24,
     borderWidth: 1.5,
     borderColor: "#1F1F1F",
     backgroundColor: "#FFF",

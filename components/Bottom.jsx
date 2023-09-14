@@ -7,35 +7,54 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
+// const Bottom = ({ navigation }) => {
 const Bottom = () => {
+  const navigation = useNavigation();
+
   return (
     <ImageBackground
-      source={require("../assets/bottom.png")} // 배경 이미지로 사용할 이미지의 경로
+      source={require("../assets/bottom.png")}
       style={styles.container}
     >
-      <TouchableOpacity style={styles.menuItem}>
+      <TouchableOpacity
+        style={styles.menuItem}
+        onPress={() => navigation.navigate("Note")}
+      >
         <Image
           source={require("../assets/community.png")}
           style={styles.icon}
         />
         <Text style={styles.menuText}>커뮤니티</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.menuItem}>
+      <TouchableOpacity
+        style={styles.menuItem}
+        onPress={() => navigation.navigate("Statistics")}
+      >
         <Image source={require("../assets/message.png")} style={styles.icon} />
         <Text style={styles.menuText}>대화</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.menuItem}>
+      <TouchableOpacity
+        style={styles.menuItem}
+        // onPress={() => navigation.navigate("Home")}
+      >
         <Image
           source={require("../assets/bottomIcon.png")}
           style={{ width: 64, height: 64, top: -50 }}
         />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.menuItem} onPress={navigateToHome}>
+      <TouchableOpacity
+        style={styles.menuItem}
+        onPress={() => navigation.navigate("FriendsList")}
+      >
         <Image source={require("../assets/friends.png")} style={styles.icon} />
         <Text style={styles.menuText}>친구</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.menuItem}>
+      <TouchableOpacity
+        style={styles.menuItem}
+        onPress={() => navigation.navigate("FriendsList")} // 마이페이지 스크린으로 이동
+      >
         <Image source={require("../assets/profile.png")} style={styles.icon} />
         <Text style={styles.menuText}>마이페이지</Text>
       </TouchableOpacity>
@@ -52,9 +71,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#FFFBF6",
     height: 110,
-    width: "100%", // 화면 너비에 맞게 확장
+    width: "100%",
   },
-
   menuItem: {
     flex: 1,
     justifyContent: "center",

@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 
 const Bar = ({ text, path }) => {
-  const [progress, setProgress] = useState(50); // You can set the initial progress here
+  const [progress, setProgress] = useState(50);
 
-  // Calculate the pixel width based on the progress (percentage)
-  const progressWidth = (progress / 100) * 335; // 335 is the maximum width
+  const progressWidth = (progress / 100) * 335;
 
   return (
     <View style={styles.container}>
-      <Image source={{ uri: path }} style={styles.image} />
+      {/* <Image source={{ uri: path }} style={styles.image} /> */}
       <Text style={styles.text}>{text}</Text>
-
       <View style={styles.progressContainer}>
         <View style={styles.progressBar}>
           <View
@@ -22,8 +20,8 @@ const Bar = ({ text, path }) => {
               },
             ]}
           />
+          <Text style={styles.progressText}>{`${progress}%`}</Text>
         </View>
-        <Text style={styles.progressText}>{`${progress}%`}</Text>
       </View>
     </View>
   );
@@ -35,6 +33,8 @@ const styles = StyleSheet.create({
     marginTop: 12,
     marginBottom: 12,
     alignItems: "center",
+    paddingLeft: 28,
+    paddingRight: 27,
   },
   image: {
     width: 32,
@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
   },
   progressBar: {
     position: "relative",
-    width: 335,
+    width: "100%",
+    // width: 335,
     height: 24,
     borderRadius: 24,
     borderWidth: 1.5,
@@ -68,9 +69,12 @@ const styles = StyleSheet.create({
     height: "100%",
     backgroundColor: "#6ADCA3",
     borderRadius: 24,
+    borderColor: "#1F1F1F",
+    borderRightWidth: 1.5,
   },
   progressText: {
-    marginLeft: -20,
+    // marginLeft: -20,
+    left: 120,
     fontSize: 16,
     fontWeight: "900",
     color: "#1F1F1F",
