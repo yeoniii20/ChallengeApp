@@ -37,7 +37,7 @@ const Bottom = () => {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.menuItem}
-        // onPress={() => navigation.navigate("Home")}
+        onPress={() => navigation.navigate("Login")}
       >
         <Image
           source={require("../assets/bottomIcon.png")}
