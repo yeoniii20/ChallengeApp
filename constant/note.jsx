@@ -21,9 +21,9 @@ function Note({ navigation }) {
     <View style={styles.container}>
       <View style={styles.contentContainer}>
         <Text style={{ padding: 10, marginTop: 10 }}>toggle switch1</Text>
-        <ToggleSwitch />
+        <ToggleSwitch isEnable={true} />
         <Text style={{ padding: 10, marginTop: 10 }}>toggle switch2</Text>
-        <CustomToggleSwitch />
+        <CustomToggleSwitch isEnable={false} />
         <Button title="modal" onPress={handleOpenModal} />
         <MsgModal
           isVisible={modalVisible}
@@ -36,11 +36,23 @@ function Note({ navigation }) {
         <Text style={{ padding: 10, marginTop: 10 }}>option modal</Text>
         <OptionModal />
         <Text style={{ padding: 10, marginTop: 10 }}>todo list card</Text>
-        <TodoCard isDisabled={false} />
+        <TodoCard
+          isDisabled={true}
+          routineName={"머리 감고 화장하기"}
+          count={3}
+          startTime={"10:20 AM"}
+          totalTime={"00시간 20분"}
+        />
         <Text style={{ paddingTop: 15, padding: 10 }}>
           todo list card disabled
         </Text>
-        <TodoCard isDisabled={true} />
+        <TodoCard
+          isDisabled={false}
+          routineName={"요리해서 밥 먹기"}
+          count={2}
+          startTime={"10:20 AM"}
+          totalTime={"00시간 10분"}
+        />
       </View>
     </View>
   );

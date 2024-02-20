@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import CustomToggleSwitch from "../ToggleSwitch/customToggleSwitch";
 
-const TodoCard = ({ isDisabled }) => {
+const TodoCard = ({ isDisabled, routineName, count, startTime, totalTime }) => {
   // 동적 스타일링을 위한 함수
   const getTextColorStyle = () => ({
     color: isDisabled ? "#969696" : "#1B1B1B",
@@ -15,22 +15,22 @@ const TodoCard = ({ isDisabled }) => {
           <View>
             <View style={styles.titleRow}>
               <Text style={[styles.titleText, getTextColorStyle()]}>
-                routine name
+                {routineName}
               </Text>
               <Text style={[styles.text, getTextColorStyle()]}>|</Text>
-              <Text style={[styles.text, getTextColorStyle()]}>n개</Text>
+              <Text style={[styles.text, getTextColorStyle()]}>{count}개</Text>
             </View>
             <View style={styles.detailRow}>
               <Text style={[styles.subText, getTextColorStyle()]}>
-                시작 시간: nn:nn AM
+                시작 시간: {startTime}
               </Text>
               <Text style={[styles.subText, getTextColorStyle()]}>
-                총 소요 시간: nn시간 nn분
+                총 소요 시간: {totalTime}
               </Text>
             </View>
           </View>
           <View style={styles.rightColumn}>
-            <CustomToggleSwitch />
+            <CustomToggleSwitch isEnable={isDisabled} />
             <Image
               source={require("../../assets/dotMenu.png")}
               style={styles.icon}
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 12,
+    gap: 8,
   },
   detailRow: {
     flexDirection: "column",
