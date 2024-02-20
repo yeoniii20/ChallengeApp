@@ -20,9 +20,9 @@ function App() {
       {/* <Top /> */}
       <Stack.Navigator
         initialRouteName="Note"
-        screenOptions={{
-          header: (props) => <Top {...props} />,
-        }}
+        // screenOptions={{
+        //   header: (props) => <Top {...props} />,
+        // }}
       >
         <Stack.Screen name="FriendsList" component={FriendsList} />
         <Stack.Screen name="Note" component={Note} />
