@@ -18,14 +18,13 @@ function Note({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-        <Text style={styles.headerText}>지출 내역 추가</Text>
         <ToggleSwitch />
         <CustomToggleSwitch />
-        <Button title="모달 열기" onPress={handleOpenModal} />
-
+        <Button title="modal" onPress={handleOpenModal} />
         <ModalComponent
           isVisible={modalVisible}
-          message="'@' 과정을 시작할까요?\n시작한 과정은 늦추거나 멈출 수 없어요."
+          message1="'@' 과정을 삭제할까요?"
+          message2="삭제한 과정은 복구할 수 없어요"
           onClose={handleCloseModal}
           leftBtnText={"취소"}
           rightBtnText={"삭제하기"}
