@@ -19,6 +19,9 @@ function App() {
     <NavigationContainer>
       {/* <Top /> */}
       <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
         initialRouteName="Note"
         // screenOptions={{
         //   header: (props) => <Top {...props} />,
