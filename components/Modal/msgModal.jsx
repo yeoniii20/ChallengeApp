@@ -23,10 +23,18 @@ const MsgModal = ({
             <Text style={styles.message}>{message2}</Text>
           </View>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity onPress={onClose} style={styles.leftBtn}>
+            <TouchableOpacity
+              onPress={onClose}
+              style={styles.leftBtn}
+              activeOpacity={1}
+            >
               <Text style={styles.leftBtnText}>{leftBtnText}</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={onClose} style={styles.rightBtn}>
+            <TouchableOpacity
+              onPress={onClose}
+              style={styles.rightBtn}
+              activeOpacity={1}
+            >
               <Text style={styles.rightBtnText}>{rightBtnText}</Text>
             </TouchableOpacity>
           </View>
