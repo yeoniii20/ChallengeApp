@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, Button } from "react-native";
 import ToggleSwitch from "../components/ToggleSwitch/toggleSwitch";
 import CustomToggleSwitch from "../components/ToggleSwitch/customToggleSwitch";
 import ModalComponent from "../components/Modal/modalComponent";
+import SmallModalComponent from "../components/Modal/smallModalComponent";
 
 function Note({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -29,6 +30,7 @@ function Note({ navigation }) {
           leftBtnText={"취소"}
           rightBtnText={"삭제하기"}
         />
+        <SmallModalComponent />
       </View>
     </View>
   );
