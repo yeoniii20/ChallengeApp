@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
 
-const CustomToggleSwitch = () => {
-  const [isEnabled, setIsEnabled] = useState(true);
+const CustomToggleSwitch = ({ isEnable }) => {
+  console.log(isEnable);
+  const [isEnabled, setIsEnabled] = useState(!isEnable);
 
   const toggleSwitch = () => setIsEnabled(!isEnabled);
 
