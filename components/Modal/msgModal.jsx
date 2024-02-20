@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-const ModalComponent = ({
+const MsgModal = ({
   isVisible,
   message1,
   message2,
@@ -104,11 +104,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ModalComponent;
+export default MsgModal;
 
 // ** modal component 사용 방법 **
 
-// <ModalComponent
+// <MsgModal
 // isVisible={modalVisible}
 // message="'@' 과정을 시작할까요?시작한 과정은 늦추거나 멈출 수 없어요."
 // onClose={handleCloseModal}

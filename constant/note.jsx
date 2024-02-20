@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Image, Button } from "react-native";
 import ToggleSwitch from "../components/ToggleSwitch/toggleSwitch";
 import CustomToggleSwitch from "../components/ToggleSwitch/customToggleSwitch";
-import ModalComponent from "../components/Modal/modalComponent";
-import SmallModalComponent from "../components/Modal/smallModalComponent";
+import MsgModal from "../components/Modal/msgModal";
+import OptionModal from "../components/Modal/optionModal";
 
 function Note({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -22,7 +22,7 @@ function Note({ navigation }) {
         <ToggleSwitch />
         <CustomToggleSwitch />
         <Button title="modal" onPress={handleOpenModal} />
-        <ModalComponent
+        <MsgModal
           isVisible={modalVisible}
           message1="'@' 과정을 삭제할까요?"
           message2="삭제한 과정은 복구할 수 없어요"
@@ -30,7 +30,7 @@ function Note({ navigation }) {
           leftBtnText={"취소"}
           rightBtnText={"삭제하기"}
         />
-        <SmallModalComponent />
+        <OptionModal />
       </View>
     </View>
   );

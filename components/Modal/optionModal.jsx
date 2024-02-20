@@ -8,7 +8,7 @@ import {
   Image,
 } from "react-native";
 
-const SmallModalComponent = () => {
+const OptionModal = () => {
   return (
     <View>
       <View
@@ -78,4 +78,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SmallModalComponent;
+export default OptionModal;
