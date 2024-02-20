@@ -4,6 +4,7 @@ import ToggleSwitch from "../components/ToggleSwitch/toggleSwitch";
 import CustomToggleSwitch from "../components/ToggleSwitch/customToggleSwitch";
 import MsgModal from "../components/Modal/msgModal";
 import OptionModal from "../components/Modal/optionModal";
+import TodoCard from "../components/other/todoCard";
 
 function Note({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -19,7 +20,9 @@ function Note({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
+        <Text style={{ padding: 10, marginTop: 10 }}>toggle switch1</Text>
         <ToggleSwitch />
+        <Text style={{ padding: 10, marginTop: 10 }}>toggle switch2</Text>
         <CustomToggleSwitch />
         <Button title="modal" onPress={handleOpenModal} />
         <MsgModal
@@ -30,7 +33,14 @@ function Note({ navigation }) {
           leftBtnText={"취소"}
           rightBtnText={"삭제하기"}
         />
+        <Text style={{ padding: 10, marginTop: 10 }}>option modal</Text>
         <OptionModal />
+        <Text style={{ padding: 10, marginTop: 10 }}>todo list card</Text>
+        <TodoCard isDisabled={false} />
+        <Text style={{ paddingTop: 15, padding: 10 }}>
+          todo list card disabled
+        </Text>
+        <TodoCard isDisabled={true} />
       </View>
     </View>
   );

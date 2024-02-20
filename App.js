@@ -30,7 +30,7 @@ function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Kakao" component={Kakao} />
       </Stack.Navigator>
-      <Bottom />
+      {/* <Bottom /> */}
     </NavigationContainer>
   );
 }
