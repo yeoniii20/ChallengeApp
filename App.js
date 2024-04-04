@@ -1,39 +1,50 @@
-import * as React from "react";
-import { View, Text } from "react-native";
+import React, { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import FriendsList from "./constant/friendsList";
 import Note from "./constant/note";
-import Statistics from "./constant/statistics";
-import Top from "./components/Top";
-import Bottom from "./components/Bottom";
-import Login from "./constant/Login";
-import Kakao from "./constant/kakao";
+import HomeScreen from "./screen/HomeScreen/homeScreen";
+import SettingScreen from "./screen/SettingScreen/settingScreen";
+import ProcessScreen from "./screen/ProcessScreen/processScreen";
 
 const Stack = createNativeStackNavigator();
 // Stack object를 반환함. { Screen, Navigator }로 구성됨.
 
 function App() {
+  // 폰트 적용
+  const customFonts = {
+    // Pretendard
+    Pretendard_Thin: require("./assets/fonts/Pretendard-Thin.otf"),
+    Pretendard_ExtraLight: require("./assets/fonts/Pretendard-ExtraLight.otf"),
+    Pretendard_Light: require("./assets/fonts/Pretendard-Light.otf"),
+    Pretendard_Regular: require("./assets/fonts/Pretendard-Regular.otf"),
+    Pretendard_Medium: require("./assets/fonts/Pretendard-Medium.otf"),
+    Pretendard_SemiBold: require("./assets/fonts/Pretendard-SemiBold.otf"),
+    Pretendard_Bold: require("./assets/fonts/Pretendard-Bold.otf"),
+    Pretendard_ExtraBold: require("./assets/fonts/Pretendard-ExtraBold.otf"),
+    Pretendard_Black: require("./assets/fonts/Pretendard-Black.otf"),
+  };
+  async function loadFonts() {
+    await Font.loadAsync(customFonts);
+  }
+
+  useEffect(() => {
+    loadFonts();
+  }, []);
+
   return (
     // NavigationContainer로 감싸야 함.
     <NavigationContainer>
-      {/* <Top /> */}
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
         }}
         initialRouteName="Note"
-        // screenOptions={{
-        //   header: (props) => <Top {...props} />,
-        // }}
       >
-        <Stack.Screen name="FriendsList" component={FriendsList} />
-        <Stack.Screen name="Note" component={Note} />
-        <Stack.Screen name="Statistics" component={Statistics} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Kakao" component={Kakao} />
+        {/* <Stack.Screen name="Note" component={Note} /> */}
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Setting" component={SettingScreen} />
+        <Stack.Screen name="Process" component={ProcessScreen} />
       </Stack.Navigator>
-      {/* <Bottom /> */}
     </NavigationContainer>
   );
 }
