@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 
-const LargeBtn = ({ text, onClick, backgroundColor }) => {
+const LargeBtn = ({ text, onClick, backgroundColor, isDisable }) => {
   return (
     <TouchableOpacity
       style={{
