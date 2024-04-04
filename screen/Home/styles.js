@@ -20,7 +20,7 @@ export default StyleSheet.create({
   text: {
     color: "#1B1B1B",
     fontSize: 28,
-    fontFamily: "Pretendard-Bold",
+    fontFamily: "Pretendard_Bold",
   },
   icon: {
     height: 24,
@@ -37,7 +37,7 @@ export default StyleSheet.create({
   contentText: {
     color: "#1B1B1B",
     fontSize: 20,
-    fontFamily: "Pretendard-Regular",
+    fontFamily: "Pretendard_Regular",
     textAlign: "center",
     paddingTop: 30,
   },

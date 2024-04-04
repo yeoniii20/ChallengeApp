@@ -94,7 +94,7 @@ const SettingScreen = () => {
                 </View>
               </View>
               <View>
-                <SlimToggleSwitch id={0} isEnable={true} onClick={() => {}} />
+                <SlimToggleSwitch id={0} isEnable={false} onClick={() => {}} />
               </View>
             </View>
           </View>

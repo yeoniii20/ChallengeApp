@@ -20,7 +20,7 @@ export default StyleSheet.create({
   text: {
     color: "#1B1B1B",
     fontSize: 16,
-    fontFamily: "Pretendard-SemiBold",
+    fontFamily: "Pretendard_SemiBold",
     alignSelf: "center",
     right: 12,
   },
@@ -41,7 +41,7 @@ export default StyleSheet.create({
   },
   contentTitle: {
     color: "#1B1B1B",
-    fontFamily: "Pretendard-Bold",
+    fontFamily: "Pretendard_Bold",
     fontSize: 20,
     marginBottom: 20,
     paddingLeft: 24,
@@ -49,12 +49,12 @@ export default StyleSheet.create({
   },
   contentText: {
     color: "#1B1B1B",
-    fontFamily: "Pretendard-SemiBold",
+    fontFamily: "Pretendard_SemiBold",
     fontSize: 16,
   },
   contentDes: {
     color: "#636363",
-    fontFamily: "Pretendard-Regular",
+    fontFamily: "Pretendard_Regular",
     fontSize: 12,
     marginBottom: 4,
   },
@@ -65,7 +65,7 @@ export default StyleSheet.create({
     marginTop: 12,
   },
   time: {
-    fontFamily: "Pretendard-SemiBold",
+    fontFamily: "Pretendard_SemiBold",
     fontSize: 16,
     color: "#969696",
     textAlign: "center",

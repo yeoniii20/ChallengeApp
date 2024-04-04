@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./styles";
+import styles from "./styels";
 import {
   View,
   Text,
@@ -8,11 +8,10 @@ import {
   ScrollView,
   Image,
 } from "react-native";
-import LargeBtn from "../../components/Button/largeBtn";
-import TodoCard from "../../components/Card/todoCard";
-import PlusBtn from "../../components/Button/plusBtn";
 import { useNavigation } from "@react-navigation/native";
-import BottomSheetScreen from "../../components/BottomSheet/BottomSheetScreen";
+import TodoCard from "../../components/other/todoCard";
+import PlusBtn from "../../components/Btn/plusBtn";
+import LargeBtn from "../../components/Btn/largeBtn";
 
 const TODO_LIST = [
   {
@@ -35,10 +34,10 @@ const COMMUNITY_SORT = [
 const ProcessScreen = () => {
   const navigation = useNavigation();
 
-  const [isInputFocused, setInputFocused] = useState < boolean > false;
-  const [inputValue, setInputValue] = useState < string > "";
-  const [open, setOpen] = useState < boolean > false;
-  const [board, setBoardSort] = useState < string > "";
+  const [isInputFocused, setInputFocused] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const [open, setOpen] = useState(false);
+  const [board, setBoardSort] = useState("");
 
   const handleSortClick = () => {
     setOpen(!open);
@@ -193,7 +192,7 @@ const ProcessScreen = () => {
           </Text>
         </View>
       </View>
-      {open && (
+      {/* {open && (
         <BottomSheetScreen
           title={"정렬기준"}
           data={COMMUNITY_SORT}
@@ -201,7 +200,7 @@ const ProcessScreen = () => {
           modalDisable={handleSortClick}
           onCategorySelect={handleCategorySelect}
         />
-      )}
+      )} */}
     </View>
   );
 };

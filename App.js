@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Note from "./constant/note";
-import HomeScreen from "./screen/HomeScreen/homeScreen";
-import SettingScreen from "./screen/SettingScreen/settingScreen";
-import ProcessScreen from "./screen/ProcessScreen/processScreen";
+import HomeScreen from "./screen/Home/homeScreen";
+import SettingScreen from "./screen/Setting/settingScreen";
+import ProcessScreen from "./screen/Process/processScreen";
 
 const Stack = createNativeStackNavigator();
-// Stack object를 반환함. { Screen, Navigator }로 구성됨.
 
 function App() {
   // 폰트 적용
@@ -32,7 +31,6 @@ function App() {
   }, []);
 
   return (
-    // NavigationContainer로 감싸야 함.
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{

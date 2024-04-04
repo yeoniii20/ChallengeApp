@@ -100,7 +100,7 @@ export default StyleSheet.create({
     padding: 8,
     color: "#636363",
     fontSize: 10,
-    fontFamily: "Pretendard-Medium",
+    fontFamily: "Pretendard_Medium",
   },
   bottomSection: {
     paddingRight: 8,
