@@ -1,48 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Note from "./constant/note";
-import HomeScreen from "./screen/Home/homeScreen";
-import SettingScreen from "./screen/Setting/settingScreen";
-import ProcessScreen from "./screen/Process/processScreen";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Icon } from "react-native-elements";
+import Home from "./screen/Home/home";
+import Settings from "./screen/Setting/setting";
+import Messages from "./screen/Messages/messages";
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 function App() {
-  // 폰트 적용
-  const customFonts = {
-    // Pretendard
-    Pretendard_Thin: require("./assets/fonts/Pretendard-Thin.otf"),
-    Pretendard_ExtraLight: require("./assets/fonts/Pretendard-ExtraLight.otf"),
-    Pretendard_Light: require("./assets/fonts/Pretendard-Light.otf"),
-    Pretendard_Regular: require("./assets/fonts/Pretendard-Regular.otf"),
-    Pretendard_Medium: require("./assets/fonts/Pretendard-Medium.otf"),
-    Pretendard_SemiBold: require("./assets/fonts/Pretendard-SemiBold.otf"),
-    Pretendard_Bold: require("./assets/fonts/Pretendard-Bold.otf"),
-    Pretendard_ExtraBold: require("./assets/fonts/Pretendard-ExtraBold.otf"),
-    Pretendard_Black: require("./assets/fonts/Pretendard-Black.otf"),
-  };
-  async function loadFonts() {
-    await Font.loadAsync(customFonts);
-  }
-
-  useEffect(() => {
-    loadFonts();
-  }, []);
-
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            if (route.name === "Home") {
+              iconName = focused ? "home" : "home";
+            } else if (route.name === "Messages") {
+              iconName = focused ? "chat" : "chat";
+            } else if (route.name === "Setting") {
+              iconName = "settings";
+            }
+
+            return (
+              <Icon name={iconName} type="material" color={color} size={size} />
+            );
+          },
+        })}
+        tabBarOptions={{
+          activeTintColor: "tomato",
+          inactiveTintColor: "gray",
         }}
-        initialRouteName="Note"
       >
-        {/* <Stack.Screen name="Note" component={Note} /> */}
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Setting" component={SettingScreen} />
-        <Stack.Screen name="Process" component={ProcessScreen} />
-      </Stack.Navigator>
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Messages" component={Messages} />
+        <Tab.Screen name="Setting" component={Settings} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
