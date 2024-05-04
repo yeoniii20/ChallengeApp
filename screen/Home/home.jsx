@@ -1,65 +1,92 @@
 import React from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
-import { Icon } from "react-native-elements";
+import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
+import { Avatar } from "react-native-elements";
 
 export default function Home() {
+  // 프로필 데이터 예시
+  const profiles = [
+    {
+      id: 1,
+      name: "대학생, 27",
+      bio: "그리다 사랑담다",
+      imageUrl: "https://via.placeholder.com/150",
+      tags: ["#서울 동대문구", "#175-180"],
+    },
+    {
+      id: 2,
+      name: "대학생, 25",
+      bio: "연세대 인/영문학",
+      imageUrl: "https://via.placeholder.com/150",
+      tags: ["#서울 마포구", "#170-175"],
+    },
+  ];
+
   return (
-    <View style={styles.container}>
-      <View style={styles.card}>
-        <Image
-          source={{ uri: "https://via.placeholder.com/150" }}
-          style={styles.profileImage}
-        />
-        <Text style={styles.name}>Jane Doe, 29</Text>
-        <Text style={styles.bio}>Loves hiking and outdoor activities.</Text>
-        <View style={styles.icons}>
-          <TouchableOpacity>
-            <Icon name="heart" type="font-awesome" color="#ff2d55" size={30} />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Icon name="close" type="font-awesome" color="#333" size={30} />
-          </TouchableOpacity>
+    <ScrollView style={styles.container}>
+      {profiles.map((profile) => (
+        <View key={profile.id} style={styles.card}>
+          <Avatar
+            size="large"
+            rounded
+            source={{ uri: profile.imageUrl }}
+            containerStyle={styles.profileImage}
+          />
+          <View style={styles.textArea}>
+            <Text style={styles.name}>{profile.name}</Text>
+            <Text style={styles.bio}>{profile.bio}</Text>
+            <View style={styles.tags}>
+              {profile.tags.map((tag, index) => (
+                <Text key={index} style={styles.tag}>
+                  {tag}
+                </Text>
+              ))}
+            </View>
+          </View>
         </View>
-      </View>
-    </View>
+      ))}
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "#F0F0F0", // 무채색 배경
   },
   card: {
-    backgroundColor: "#FFDEE9", // Light coral background
-    borderRadius: 20,
-    padding: 20,
-    alignItems: "center",
+    flexDirection: "row",
+    backgroundColor: "#FFFFFF",
+    borderRadius: 10,
+    padding: 10,
+    marginVertical: 8,
+    marginHorizontal: 16,
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
   },
   profileImage: {
-    width: 150,
-    height: 150,
-    borderRadius: 75,
+    marginRight: 10,
+  },
+  textArea: {
+    flex: 1,
+    justifyContent: "center",
   },
   name: {
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: "bold",
-    marginTop: 10,
   },
   bio: {
     fontSize: 16,
-    color: "#333",
-    marginTop: 5,
+    color: "#555",
   },
-  icons: {
+  tags: {
     flexDirection: "row",
-    marginTop: 10,
+    marginTop: 4,
+  },
+  tag: {
+    marginRight: 5,
+    color: "#555",
   },
 });
