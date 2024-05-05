@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import * as Font from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, View, Text } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { Icon } from "react-native-elements";
 import Home from "./screen/Home/home";
 import Settings from "./screen/Setting/setting";
@@ -28,22 +30,62 @@ function CustomBackButton() {
   );
 }
 
+function GradientHeader() {
+  return (
+    <LinearGradient
+      colors={["#FFAD9F", "#FF9E8B", "#FF8F77"]}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 0, y: 0.5 }}
+      style={{ flex: 1 }}
+    />
+  );
+}
+
 function App() {
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+
+  async function loadFonts() {
+    await Font.loadAsync({
+      Moirai: require("./assets/fonts/MoiraiOne-Regular.ttf"),
+      Samlip: require("./assets/fonts/SDSamliphopangcheTTFOutline.ttf"),
+    });
+  }
+
+  useEffect(() => {
+    loadFonts().then(() => setFontsLoaded(true));
+  }, []);
+
+  if (!fontsLoaded) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Text>Fonts are loading...</Text>
+      </View>
+    );
+  }
+
   return (
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
+          headerBackground: () => <GradientHeader />,
           headerStyle: {
-            backgroundColor: "#f4511e", // 헤더의 배경색
+            shadowColor: "#000",
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
+            borderBottomLeftRadius: 16,
+            borderBottomRightRadius: 16,
           },
-          headerTintColor: "#fff", // 헤더의 글자색
+          headerTintColor: "#fff",
           headerTitleStyle: {
-            fontWeight: "bold", // 헤더 타이틀의 글자 스타일
+            fontFamily: "Samlip",
+            fontSize: 20,
+            fontWeight: "bold",
           },
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
-
-            if (route.name === "Home") {
+            if (route.name === "Meet-ing") {
               iconName = focused ? "home" : "home";
             } else if (route.name === "Messages") {
               iconName = focused ? "chat" : "chat";
@@ -54,14 +96,13 @@ function App() {
               <Icon name={iconName} type="material" color={color} size={size} />
             );
           },
-          // headerShown: false,
         })}
         tabBarOptions={{
-          activeTintColor: "tomato",
-          inactiveTintColor: "gray",
+          activeTintColor: "#FF9E8B",
+          inactiveTintColor: "#8b8b8b",
         }}
       >
-        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Meet-ing" component={Home} />
         <Tab.Screen
           name="Messages"
           component={Messages}
